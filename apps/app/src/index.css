@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* @font-face {
+    font-family: "AdobeClean";
+    font-weight: 300;
+    src: url("./assets/fonts/AdobeClean-Light.ttf");
+  }
+
+  @font-face {
+    font-family: "AdobeClean";
+    font-weight: 400;
+    src: url("./assets/fonts/AdobeClean-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "AdobeClean";
+    font-weight: 600;
+    src: url("./assets/fonts/AdobeClean-Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "AdobeClean";
+    font-weight: 700;
+    src: url("./assets/fonts/AdobeClean-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "AdobeClean";
+    font-weight: 900;
+    src: url("./assets/fonts/AdobeClean-Black.ttf");
+  } */
+}
+
+body {
+  margin: 0;
+}
+
+@layer base {
+  .clean-style ul,
+  .clean-style ol,
+  .clean-style p {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+    letter-spacing: revert;
+    line-height: revert;
+  }
+  .clean-style table {
+    border-width: 1px;
+  }
+  .clean-style table > tbody,
+  .clean-style table > tbody > tr,
+  .clean-style table > tbody > tr > td {
+    border-width: inherit;
+    border-color: inherit;
+  }
+  .clean-style h1,
+  .clean-style h2,
+  .clean-style h3,
+  .clean-style h4,
+  .clean-style h5,
+  .clean-style h6 {
+    font-size: revert;
+    line-height: revert;
+    letter-spacing: revert;
+  }
+}
+
+.hide-overflow {
+  @apply overflow-y-hidden;
+}
+
+.checkBox-input:checked ~ .checkBox-content {
+  @apply opacity-100;
+}

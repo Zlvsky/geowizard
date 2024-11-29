@@ -1,0 +1,8 @@
+{
+  "name": "cypress",
+  "private": true,
+  "scripts": {
+    "open": "cypress open",
+    "run": "cypress run"
+  }
+}

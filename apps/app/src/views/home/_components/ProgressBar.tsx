@@ -22,13 +22,13 @@ function ProgressBar() {
               <div
                 className={cn(
                   `relative h-5 w-5 rounded-full border-[3px] transition-colors duration-700`,
-                  index <= currentStep ? 'border-blue-500' : 'border-muted',
-                  index < currentStep ? 'bg-blue-500' : 'bg-white'
+                  index <= currentStep ? 'border-blue-500' : 'border-slate',
+                  index < currentStep ? 'bg-blue-500' : 'bg-white dark:bg-dark-background'
                 )}>
                 <span
                   className={cn(
                     'absolute -top-8 left-1/2 mb-3 w-max -translate-x-1/2 text-sm transition-colors duration-700',
-                    index === currentStep ? 'text-blue-500' : 'text-muted'
+                    index === currentStep ? 'text-blue-500' : 'text-slate'
                   )}>
                   {step}
                 </span>

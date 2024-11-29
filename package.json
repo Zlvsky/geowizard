@@ -13,6 +13,7 @@
     "cypress:open": "pnpm --filter cypress open",
     "cypress:run": "pnpm --filter cypress run",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.json",
+    "prepare": "husky",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
@@ -53,6 +54,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.16.0",
+    "husky": "^9.1.7",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.12",

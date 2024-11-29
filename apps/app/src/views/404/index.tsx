@@ -1,6 +1,6 @@
 import BigContainer from '@/components/layout/containers/Container'
 import PageWrap from '@/components/layout/containers/PageWrap'
-import { Button } from '@/components/ui/common/Button'
+import { Button } from '@/components/ui/Button'
 import { PATHS } from '@/router/data'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'

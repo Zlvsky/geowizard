@@ -1,4 +1,5 @@
-import Logo from './components/Logo'
+import Logo from './_components/Logo'
+import ThemeToggle from './_components/ThemeToggle'
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
         <Logo />
       </div>
       <div className="flex items-center justify-end p-4">
-        <Logo />
+        <ThemeToggle />
       </div>
     </nav>
   )

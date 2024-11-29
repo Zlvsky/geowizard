@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
         sans: ['Helvetica', 'Arial', 'sans-serif']
       },
-      colors: {},
+      colors: {
+        'dark-background': '#212121'
+      },
       boxShadow: {
         container: '1px 15px 50px 0px rgba(216, 222, 232, 0.6)',
         hover: '0px 0px 25px 0px rgba(0, 0, 0, 0.1)',

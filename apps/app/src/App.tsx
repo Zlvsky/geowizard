@@ -2,6 +2,7 @@ import Header from '@/components/layout/header/Header'
 import { Toaster } from 'react-hot-toast'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './router/Router'
+import PageWrap from './components/layout/containers/PageWrap'
 
 const GlobalTopComponents = () => {
   return (
@@ -22,9 +23,11 @@ const GlobalBottomComponents = () => {
 function App() {
   return (
     <BrowserRouter>
-      <GlobalTopComponents />
-      <Router />
-      <GlobalBottomComponents />
+      <PageWrap>
+        <GlobalTopComponents />
+        <Router />
+        <GlobalBottomComponents />
+      </PageWrap>
     </BrowserRouter>
   )
 }

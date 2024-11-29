@@ -8,7 +8,10 @@ export default {
         sans: ['Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
-        'dark-background': '#212121'
+        primary: '#226BFE',
+        'dark-background': '#212121',
+        light: '#F6F6F6',
+        muted: '#848FA1'
       },
       boxShadow: {
         container: '1px 15px 50px 0px rgba(216, 222, 232, 0.6)',

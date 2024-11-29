@@ -3,8 +3,7 @@ import ThemeToggle from './_components/ThemeToggle'
 
 function Header() {
   return (
-    <nav className="container grid w-full grid-cols-3 px-4 mx-auto">
-      <div />
+    <nav className="container flex w-full items-center justify-between px-4 mx-auto">
       <div className="flex items-center justify-center p-4">
         <Logo />
       </div>

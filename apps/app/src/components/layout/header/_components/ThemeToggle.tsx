@@ -1,8 +1,8 @@
 import { Moon, Sun } from 'lucide-react'
 
-import { Button } from '@/components/ui/Button'
-import { useEffect, useState } from 'react'
+import { ThemeSwitch } from '@/components/ui/ThemeSwitch'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { useEffect, useState } from 'react'
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useLocalStorage('theme', 'light')
@@ -20,16 +20,23 @@ export default function ThemeToggle() {
   }
 
   return (
-    <Button variant="icon" onClick={handleThemeChange}>
-      <Sun
-        size={24}
-        className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-      />
-      <Moon
-        size={24}
-        className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-      />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <ThemeSwitch
+      id="theme-switch"
+      checked={theme === 'light'}
+      onCheckedChange={handleThemeChange}>
+      <div className="">
+        <Sun
+          size={18}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0"
+          color="white"
+        />
+        <Moon
+          size={18}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100"
+          color="white"
+        />
+        <span className="sr-only">Toggle theme</span>
+      </div>
+    </ThemeSwitch>
   )
 }

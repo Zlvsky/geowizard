@@ -23,13 +23,16 @@ const buttonVariants = cva(
         default: 'border border-black bg-black text-white hover:bg-black/90',
         outline: 'border border-black bg-transparent text-black',
         link: 'underline-offset-4 hover:underline',
-        icon: 'ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md'
+        icon: 'ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        input: 'w-full border-[1.5px] border-input rounded-xl text-base justify-between'
       },
       size: {
         default: 'h-10 px-4 py-2',
         sm: 'h-9 rounded-md px-3',
         lg: 'h-11 rounded-md px-8',
-        icon: 'h-7 w-7 p-0 [&_svg]:h-4 [&_svg]:w-4'
+        icon: 'h-7 w-7 p-0 [&_svg]:h-4 [&_svg]:w-4',
+        input: 'px-4 py-2'
       }
     },
     defaultVariants: {

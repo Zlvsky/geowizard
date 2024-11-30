@@ -12,7 +12,7 @@ interface ContextProps {
 const CustomContext = createContext<CustomContextData | undefined>(undefined)
 
 export function WizardContextProvider({ children }: ContextProps) {
-  const [currentStep, setCurrentStep] = useState(3)
+  const [currentStep, setCurrentStep] = useState(0)
 
   return (
     <CustomContext.Provider

@@ -22,6 +22,7 @@ function FormWrap({
   return (
     <form
       id={id}
+      className='max-w-2xl mx-auto'
       onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         onSubmit && onSubmit(e)

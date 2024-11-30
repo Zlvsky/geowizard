@@ -1,11 +1,14 @@
-import React from 'react';
+import StepDescription from '../StepDescription'
 
 function FileUpload() {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div className="w-full">
+      <StepDescription
+        title="Upload your geodata"
+        description="Please upload your geojson file."
+      />
+    </div>
+  )
 }
 
-export default FileUpload;
+export default FileUpload

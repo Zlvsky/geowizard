@@ -38,6 +38,9 @@ importers:
       framer-motion:
         specifier: ^11.12.0
         version: 11.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      html-react-parser:
+        specifier: ^5.1.18
+        version: 5.1.18(@types/react@18.3.3)(react@18.3.1)
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -1674,6 +1677,19 @@ packages:
     resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
     engines: {node: '>=6.0.0'}
 
+  dom-serializer@2.0.0:
+    resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
+
+  domelementtype@2.3.0:
+    resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+
+  domhandler@5.0.3:
+    resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
+    engines: {node: '>= 4'}
+
+  domutils@3.1.0:
+    resolution: {integrity: sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==}
+
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
 
@@ -2049,6 +2065,21 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  html-dom-parser@5.0.10:
+    resolution: {integrity: sha512-GwArYL3V3V8yU/mLKoFF7HlLBv80BZ2Ey1BzfVNRpAci0cEKhFHI/Qh8o8oyt3qlAMLlK250wsxLdYX4viedvg==}
+
+  html-react-parser@5.1.18:
+    resolution: {integrity: sha512-65BwC0zzrdeW96jB2FRr5f1ovBhRMpLPJNvwkY5kA8Ay5xdL9t/RH2/uUTM7p+cl5iM88i6dDk4LXtfMnRmaJQ==}
+    peerDependencies:
+      '@types/react': 0.14 || 15 || 16 || 17 || 18
+      react: 0.14 || 15 || 16 || 17 || 18
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  htmlparser2@9.1.0:
+    resolution: {integrity: sha512-5zfg6mHUoaer/97TxnGpxmbR7zJtPwIYFMZ/H5ucTlPZhKvtum05yiPK3Mgai3a0DyVxv7qYqoweaEd2nrYQzQ==}
+
   http-signature@1.3.6:
     resolution: {integrity: sha512-3adrsD6zqo4GsTqtO7FyrejHNv+NgiIfAfv68+jVlFmSr9OGy7zrxONceFRLKvnnZA5jbxQBX1u9PpB6Wi32Gw==}
     engines: {node: '>=0.10'}
@@ -2091,6 +2122,9 @@ packages:
   ini@2.0.0:
     resolution: {integrity: sha512-7PnF4oN3CvZF23ADhA5wRaYEQpJ8qygSkbtTXWBeXWXmEVRXK+1ITciHWwHhsjv1TmW0MgacIv6hEi5pX5NQdA==}
     engines: {node: '>=10'}
+
+  inline-style-parser@0.2.4:
+    resolution: {integrity: sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==}
 
   invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
@@ -2702,6 +2736,9 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
+  react-property@2.0.2:
+    resolution: {integrity: sha512-+PbtI3VuDV0l6CleQMsx2gtK0JZbZKbpdu5ynr+lbsuvtmgbNcS3VM0tuY2QjFNOcWxvXeHjDpy42RO+4U2rug==}
+
   react-quill@2.0.0:
     resolution: {integrity: sha512-4qQtv1FtCfLgoD3PXAur5RyxuUbPXQGOHgTlFie3jtxp43mXDtzCKaOgQ3mLyZfi1PUlyjycfivKelFhy13QUg==}
     peerDependencies:
@@ -2912,6 +2949,12 @@ packages:
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  style-to-js@1.1.16:
+    resolution: {integrity: sha512-/Q6ld50hKYPH3d/r6nr117TZkHR0w0kGGIVfpG9N6D8NymRPM9RqCUv4pRpJ62E5DqOYx2AFpbZMyCPnjQCnOw==}
+
+  style-to-object@1.0.8:
+    resolution: {integrity: sha512-xT47I/Eo0rwJmaXC4oilDGDWLohVhR6o/xAQcPQN8q6QBuZVL8qMYL85kLmST5cPjAorwvqIA4qXTRQoYHaL6g==}
 
   sucrase@3.35.0:
     resolution: {integrity: sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==}
@@ -4631,6 +4674,24 @@ snapshots:
     dependencies:
       esutils: 2.0.3
 
+  dom-serializer@2.0.0:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      entities: 4.5.0
+
+  domelementtype@2.3.0: {}
+
+  domhandler@5.0.3:
+    dependencies:
+      domelementtype: 2.3.0
+
+  domutils@3.1.0:
+    dependencies:
+      dom-serializer: 2.0.0
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
@@ -5061,6 +5122,28 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  html-dom-parser@5.0.10:
+    dependencies:
+      domhandler: 5.0.3
+      htmlparser2: 9.1.0
+
+  html-react-parser@5.1.18(@types/react@18.3.3)(react@18.3.1):
+    dependencies:
+      domhandler: 5.0.3
+      html-dom-parser: 5.0.10
+      react: 18.3.1
+      react-property: 2.0.2
+      style-to-js: 1.1.16
+    optionalDependencies:
+      '@types/react': 18.3.3
+
+  htmlparser2@9.1.0:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.1.0
+      entities: 4.5.0
+
   http-signature@1.3.6:
     dependencies:
       assert-plus: 1.0.0
@@ -5092,6 +5175,8 @@ snapshots:
   inherits@2.0.4: {}
 
   ini@2.0.0: {}
+
+  inline-style-parser@0.2.4: {}
 
   invariant@2.2.4:
     dependencies:
@@ -5593,6 +5678,8 @@ snapshots:
 
   react-is@16.13.1: {}
 
+  react-property@2.0.2: {}
+
   react-quill@2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@types/quill': 1.3.10
@@ -5828,6 +5915,14 @@ snapshots:
   strip-final-newline@2.0.0: {}
 
   strip-json-comments@3.1.1: {}
+
+  style-to-js@1.1.16:
+    dependencies:
+      style-to-object: 1.0.8
+
+  style-to-object@1.0.8:
+    dependencies:
+      inline-style-parser: 0.2.4
 
   sucrase@3.35.0:
     dependencies:

@@ -67,7 +67,7 @@ const IconComponent = ({ isDragActive }: { isDragActive: boolean }) => {
   )
 }
 
-const ListedFile = () => {
+export const ListedFile = () => {
   const { uploadedFile } = useWizardContext()
 
   return (

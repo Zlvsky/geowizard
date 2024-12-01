@@ -118,11 +118,13 @@ function FileUpload() {
     <motion.div
       className="w-full space-y-8"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      // whileInView="visible"
+      animate="visible"
+      key="file-upload"
+      // viewport={{ once: true }}
       transition={{
         duration: 0.1,
-        delay: 0.3,
+        delay: 0.150,
         type: 'spring',
         damping: 10,
         stiffness: 100

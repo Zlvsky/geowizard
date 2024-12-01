@@ -14,7 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { date, z } from 'zod'
 import StepDescription from '../StepDescription'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useWizardContext } from '../../_context/WizardContext'
 
 
@@ -54,11 +54,12 @@ function ProjectDetails() {
     <motion.div
       className="w-full space-y-8"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      exit="hidden"
+      animate="visible"
+      key="project-details"
+      // viewport={{ once: true }}
       transition={{
         duration: 0.1,
-        delay: 0.3,
         type: 'spring',
         damping: 10,
         stiffness: 100

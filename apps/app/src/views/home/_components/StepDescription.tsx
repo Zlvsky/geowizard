@@ -10,11 +10,13 @@ function StepDescription({ title, description }: IProps) {
     <div className="flex flex-col items-center justify-center gap-3">
       <motion.div
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        key="step-description"
+        // whileInView="visible"
+        // viewport={{ once: true }}
+        animate="visible"
         transition={{
           duration: 0.1,
-          delay: 0.3,
+          // delay: 0.3,
           type: 'spring',
           damping: 10,
           stiffness: 100
@@ -29,11 +31,13 @@ function StepDescription({ title, description }: IProps) {
       </motion.div>
       <motion.div
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        key="step-description2"
+        // whileInView="visible"
+        // viewport={{ once: true }}
+        animate="visible"
         transition={{
           duration: 0.1,
-          delay: 0.4,
+          delay: 0.1,
           type: 'spring',
           damping: 10,
           stiffness: 100

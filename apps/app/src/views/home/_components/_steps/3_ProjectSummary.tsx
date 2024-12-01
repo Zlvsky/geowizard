@@ -89,13 +89,17 @@ function ProjectSummary() {
           if (data.status === 200) {
             setNewProjectId(data.id)
             setCurrentStep(3)
+            setLoading(false)
             return 'Data has been sent successfully.'
           }
+          setLoading(false)
           return 'An error occurred while sending the data.'
         },
-        error: 'An error occurred while sending the data.'
+        error: () => {
+          setLoading(false)
+          return 'An error occurred while sending the data.'
+        }
       })
-      setLoading(false)
     }, 500)
   }
 

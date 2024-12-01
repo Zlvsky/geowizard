@@ -5,6 +5,7 @@ import { Router } from './router/Router'
 import PageWrap from './components/layout/containers/PageWrap'
 import { CustomToster } from './components/ui/toaster'
 import { Toaster } from './components/ui/sonner'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 
 const GlobalTopComponents = () => {
@@ -26,14 +27,18 @@ const GlobalBottomComponents = () => {
 }
 
 function App() {
+  const queryClient = new QueryClient()
+
   return (
-    <BrowserRouter>
-      <PageWrap>
-        <GlobalTopComponents />
-        <Router />
-        <GlobalBottomComponents />
-      </PageWrap>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <PageWrap>
+          <GlobalTopComponents />
+          <Router />
+          <GlobalBottomComponents />
+        </PageWrap>
+      </BrowserRouter>
+    </QueryClientProvider>
   )
 }
 

@@ -4,7 +4,6 @@ import ProjectDetails from './_steps/1_ProjectDetails'
 import FileUpload from './_steps/2_FileUpload'
 import ProjectSummary from './_steps/3_ProjectSummary'
 import ProjectResult from './_steps/4_ProjectResult'
-import { AnimatePresence } from 'framer-motion'
 
 export default function ProjectWizard() {
   const { currentStep } = useWizardContext()
@@ -12,13 +11,9 @@ export default function ProjectWizard() {
   const renderStep = useCallback(() => {
     switch (currentStep) {
       case 0:
-        return (
-          <AnimatePresence>
-            <ProjectDetails />
-          </AnimatePresence>
-        )
+        return <ProjectDetails key={'project-details'} />
       case 1:
-        return <FileUpload />
+        return <FileUpload key={'file-upload'} />
       case 2:
         return <ProjectSummary />
       case 3:
@@ -31,6 +26,7 @@ export default function ProjectWizard() {
   return (
     <div className="mx-auto mt-2 max-w-6xl px-4 py-6">
       {renderStep()}
+      {/* <AnimatePresence mode="wait">{renderStep()}</AnimatePresence> */}
     </div>
   )
 }

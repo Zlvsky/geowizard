@@ -329,7 +329,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       <PopoverTrigger asChild>
         <Button size={'input'} variant="input">
           <div className="text-right">
-            <div className="py-1">
+            <div className="py-1 font-normal">
               <div>{`${formatDate(range.from, locale)}${
                 range.to != null ? ' - ' + formatDate(range.to, locale) : ''
               }`}</div>

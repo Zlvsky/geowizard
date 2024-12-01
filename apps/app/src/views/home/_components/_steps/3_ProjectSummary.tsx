@@ -1,7 +1,14 @@
+import {
+  createProjectService,
+  failCreateProjectService,
+  uploadFileService
+} from '@/api/mockedService'
 import FormWrap from '@/components/forms/form/FormWrap'
 import { format } from 'date-fns'
 import { motion } from 'framer-motion'
 import parse from 'html-react-parser'
+import { useState } from 'react'
+import { toast } from 'sonner'
 import { useWizardContext } from '../../_context/WizardContext'
 import StepDescription from '../StepDescription'
 import { ListedFile } from './2_FileUpload'
@@ -19,7 +26,7 @@ const DescriptionText = ({ title, value }: { title: string; value: string }) => 
   return (
     <div className="flex flex-col">
       <h3 className="text-lg font-medium text-black dark:text-white">{title}</h3>
-      <div className="text-slate-text prose dark:text-white max-h-80 overflow-auto">
+      <div className="text-slate-text prose max-h-80 overflow-auto dark:text-white">
         {value ? parse(value) : 'No description provided'}
       </div>
     </div>
@@ -27,10 +34,74 @@ const DescriptionText = ({ title, value }: { title: string; value: string }) => 
 }
 
 function ProjectSummary() {
-  const { formDetails, uploadedFile, setCurrentStep } = useWizardContext()
+  const { formDetails, uploadedFile, setCurrentStep, setNewProjectId } =
+    useWizardContext()
+  const [loading, setLoading] = useState(false)
+  const [MOCKED_API_COUNT, setMOCKED_API_COUNT] = useState(0)
 
-  const onSubmit = () => {
-    console.log('Submitted')
+  const uploadFileRequest = async () => {
+    const response: any = await uploadFileService(uploadedFile!)
+    if (response.status !== 200)
+      throw new Error('An error occurred while uploading the file.')
+    return response
+  }
+
+  const handleUploadFile = () => {
+    toast.promise(uploadFileRequest, {
+      loading: 'File is being uploaded.',
+      success: (data) => {
+        if (data.status === 200) {
+          handleUploadData(data.location)
+          return 'The file has been uploaded successfully.'
+        }
+        return 'An error occurred while uploading the file.'
+      },
+      error: 'An error occurred while uploading the file.'
+    })
+  }
+
+  const uploadDataRequest = async (fileLocation: string) => {
+    const payload = {
+      name: formDetails.name,
+      description: formDetails.description,
+      date: formDetails.date,
+      file: fileLocation
+    }
+    // This is a mocked service that will return a successful response after second call
+    if (MOCKED_API_COUNT === 0) {
+      const response: any = await failCreateProjectService(payload)
+      setMOCKED_API_COUNT(1)
+      if (response.status !== 200)
+        throw new Error('An error occurred while creating the project.')
+      return response
+    }
+    const response: any = await createProjectService(payload)
+    if (response.status !== 200)
+      throw new Error('An error occurred while creating the project.')
+    return response
+  }
+
+  const handleUploadData = (fileLocation: string) => {
+    setTimeout(() => {
+      toast.promise(() => uploadDataRequest(fileLocation), {
+        loading: 'Data is being sent to the server.',
+        success: (data) => {
+          if (data.status === 200) {
+            setNewProjectId(data.id)
+            setCurrentStep(3)
+            return 'Data has been sent successfully.'
+          }
+          return 'An error occurred while sending the data.'
+        },
+        error: 'An error occurred while sending the data.'
+      })
+      setLoading(false)
+    }, 500)
+  }
+
+  const onSubmit = async () => {
+    setLoading(true)
+    handleUploadFile()
   }
 
   return (
@@ -54,7 +125,11 @@ function ProjectSummary() {
         title="Check if everything is correct"
         description="Please check if everything is correct before submitting your project."
       />
-      <FormWrap submitText="Create new project" buttonClassName="w-full text-base" onSubmit={onSubmit}>
+      <FormWrap
+        submitText="Create new project"
+        buttonClassName="w-full text-base"
+        onSubmit={onSubmit}
+        disabled={loading}>
         <div className="flex flex-col gap-6">
           <SummaryText title="Project name" value={formDetails.name} />
           <SummaryText

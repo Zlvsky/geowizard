@@ -14,6 +14,8 @@ interface CustomContextData {
   setFormDetails: (details: any) => void
   uploadedFile: File | null
   setUploadedFile: (file: File | null) => void
+  newProjectId: string | null
+  setNewProjectId: (id: string) => void
 }
 
 interface ContextProps {
@@ -33,6 +35,7 @@ export function WizardContextProvider({ children }: ContextProps) {
     }
   })
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
+  const [newProjectId, setNewProjectId] = useState<string | null>(null)
 
   return (
     <CustomContext.Provider
@@ -42,7 +45,9 @@ export function WizardContextProvider({ children }: ContextProps) {
         formDetails,
         setFormDetails,
         setUploadedFile,
-        uploadedFile
+        uploadedFile,
+        newProjectId,
+        setNewProjectId
       }}>
       {children}
     </CustomContext.Provider>

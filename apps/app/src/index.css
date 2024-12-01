@@ -111,3 +111,37 @@ body {
 .checkBox-input:checked ~ .checkBox-content {
   @apply opacity-100;
 }
+
+/* QUILL STYLES */
+
+.ql-toolbar.ql-snow {
+  @apply border-[1.5px] border-input rounded-t-2xl;
+}
+
+.ql-container.ql-snow {
+  @apply border-[1.5px] border-input rounded-b-2xl;
+}
+
+.ql-editor {
+  @apply prose w-full max-w-full;
+}
+
+.ql-editor.ql-blank::before {
+  @apply text-placeholder not-italic;
+}
+
+.ql-stroke {
+  @apply !stroke-placeholder;
+}
+.ql-fill {
+  @apply !fill-placeholder;
+}
+
+.ql-formats {
+  @apply border-r last:border-r-0 pr-4
+}
+
+.ql-formats button {
+  @apply rounded-md !size-7 !p-1 hover:bg-input transition-colors;
+}
+

@@ -12,6 +12,7 @@ export default {
         'dark-background': '#212121',
         light: '#F6F6F6',
         slate: '#848FA1',
+        placeholder: "#9BA3AF",
         "slate-text": "#6E7B92",
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',

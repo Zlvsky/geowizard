@@ -3,22 +3,27 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel
+  FormLabel,
+  FormMessage
 } from '@/components/forms/form/Form'
 import FormWrap from '@/components/forms/form/FormWrap'
+import Input from '@/components/forms/inputs/text/Input'
+import { RichText } from '@/components/forms/inputs/text/RichText'
+import { DateRangePicker } from '@/components/ui/calendar/DateRangePicker'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { date, z } from 'zod'
 import StepDescription from '../StepDescription'
-import Input from '@/components/forms/inputs/text/Input'
-import { DateRangePicker } from '@/components/ui/calendar/DateRangePicker'
 
 const formSchema = z.object({
-  name: z.string(),
+  name: z
+    .string()
+    .max(32, { message: 'Name must be less than 32 characters' })
+    .min(1, { message: 'Name is required' }),
   description: z.string().optional(),
   date: z.object({
-    from: date(),
-    to: date()
+    from: date({ required_error: 'Start date is required' }),
+    to: date({ required_error: 'End date is required' })
   })
 })
 
@@ -62,9 +67,9 @@ function ProjectDetails() {
                       className=""
                       maxLength={32}
                       {...field}
-                      required
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -75,15 +80,13 @@ function ProjectDetails() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Input
-                      type="text"
+                    <RichText
                       placeholder="Name of your project"
-                      className=""
                       {...field}
                       // error={errors?.email}
-                      required
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -91,16 +94,17 @@ function ProjectDetails() {
               control={form.control}
               name="date"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="mb-4">
                   <FormLabel required>Date range</FormLabel>
                   <FormControl>
                     <DateRangePicker
-                      onUpdate={(values) => field.onChange(values)}
+                      onUpdate={(values) => field.onChange(values.range)}
                       align="center"
                       locale="en-GB"
                       showCompare={false}
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />

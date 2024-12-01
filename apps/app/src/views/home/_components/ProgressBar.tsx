@@ -8,7 +8,7 @@ function ProgressBar() {
 
   return (
     <div className="relative mx-auto mt-8 mb-4 max-w-6xl">
-      <div className="bg-muted absolute bottom-2.5 left-0 h-1 w-full translate-y-1/2" />
+      <div className="bg-muted dark:bg-muted-foreground absolute bottom-2.5 left-0 h-1 w-full translate-y-1/2" />
       <motion.div
         className="absolute bottom-2.5 left-0 h-1  translate-y-1/2 bg-blue-500"
         initial={{ width: '0%' }}
@@ -21,7 +21,7 @@ function ProgressBar() {
             <div
               className={cn(
                 `relative h-5 w-5 rounded-full border-[3px] transition-colors duration-700`,
-                index <= currentStep ? 'border-blue-500' : 'border-slate',
+                index <= currentStep ? 'border-blue-500' : 'border-muted dark:border-muted-foreground',
                 index < currentStep ? 'bg-blue-500' : 'dark:bg-dark-background bg-white'
               )}>
               <span

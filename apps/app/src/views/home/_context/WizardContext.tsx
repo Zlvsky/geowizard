@@ -3,6 +3,17 @@ import React, { createContext, useContext, useState } from 'react'
 interface CustomContextData {
   currentStep: number
   setCurrentStep: (step: number) => void
+  formDetails: {
+    name: string
+    description: string
+    date: {
+      from: Date
+      to: Date
+    }
+  }
+  setFormDetails: (details: any) => void
+  uploadedFile: File | null
+  setUploadedFile: (file: File | null) => void
 }
 
 interface ContextProps {
@@ -13,12 +24,25 @@ const CustomContext = createContext<CustomContextData | undefined>(undefined)
 
 export function WizardContextProvider({ children }: ContextProps) {
   const [currentStep, setCurrentStep] = useState(0)
+  const [formDetails, setFormDetails] = useState({
+    name: '',
+    description: '',
+    date: {
+      from: new Date(),
+      to: new Date()
+    }
+  })
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
 
   return (
     <CustomContext.Provider
       value={{
         currentStep,
-        setCurrentStep
+        setCurrentStep,
+        formDetails,
+        setFormDetails,
+        setUploadedFile,
+        uploadedFile
       }}>
       {children}
     </CustomContext.Provider>

@@ -14,6 +14,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { date, z } from 'zod'
 import StepDescription from '../StepDescription'
+import { motion } from 'framer-motion'
+import { useWizardContext } from '../../_context/WizardContext'
+
 
 const formSchema = z.object({
   name: z
@@ -28,6 +31,7 @@ const formSchema = z.object({
 })
 
 function ProjectDetails() {
+  const { setFormDetails, setCurrentStep } = useWizardContext()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,10 +44,29 @@ function ProjectDetails() {
     }
   })
 
-  const onSubmit = async (data: any) => {}
+
+  const onSubmit = async (data: any) => {
+    setFormDetails(data)
+    setCurrentStep(1)
+  }
 
   return (
-    <div className="w-full space-y-8">
+    <motion.div
+      className="w-full space-y-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.1,
+        delay: 0.3,
+        type: 'spring',
+        damping: 10,
+        stiffness: 100
+      }}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 30 }
+      }}>
       <StepDescription
         title="New Project"
         description="Please start by providing details of your project."
@@ -111,7 +134,7 @@ function ProjectDetails() {
           </div>
         </FormWrap>
       </Form>
-    </div>
+    </motion.div>
   )
 }
 

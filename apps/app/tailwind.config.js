@@ -5,19 +5,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Helvetica', 'Arial', 'sans-serif']
+        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
         primary: '#226BFE',
         'dark-background': '#212121',
         light: '#F6F6F6',
         slate: '#848FA1',
-        placeholder: "#9BA3AF",
-        "slate-text": "#6E7B92",
+        placeholder: '#9BA3AF',
+        'slate-text': '#6E7B92',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        input: "#ECEDF0",
+        input: '#ECEDF0',
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))'

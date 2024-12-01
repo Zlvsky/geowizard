@@ -51,7 +51,7 @@ function ProjectSummary() {
       loading: 'File is being uploaded.',
       success: (data) => {
         if (data.status === 200) {
-          handleUploadData(data.location)
+          handleUploadData(data.res.location)
           return 'The file has been uploaded successfully.'
         }
         return 'An error occurred while uploading the file.'
@@ -87,7 +87,7 @@ function ProjectSummary() {
         loading: 'Data is being sent to the server.',
         success: (data) => {
           if (data.status === 200) {
-            setNewProjectId(data.id)
+            setNewProjectId(data.res.id)
             setCurrentStep(3)
             setLoading(false)
             return 'Data has been sent successfully.'

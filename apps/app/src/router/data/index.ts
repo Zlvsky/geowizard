@@ -1,4 +1,5 @@
 import Home from '@/views/home'
+import ProjectPage from '@/views/project'
 
 const publicPaths = {
   HOME: '/',
@@ -28,7 +29,7 @@ const createRoute = (
 export const routes = {
   public: [
     createRoute(PATHS.HOME, Home, { index: true }),
-    createRoute(PATHS.PROJECT, Home)
+    createRoute(PATHS.PROJECT + ':id', ProjectPage)
   ],
   nonAuthenticated: [],
   authenticated: []

@@ -4,12 +4,13 @@ import useCountdown from '@bradgarropy/use-countdown'
 import Confetti from 'react-confetti'
 import StepDescription from '../StepDescription'
 
+import { getProjectService } from '@/api/mockedService'
 import { PATHS } from '@/router/data'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
+import { useQuery, useQueryClient } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 import { useWizardContext } from '../../_context/WizardContext'
-import { useQueryClient } from 'react-query'
 
 function ProjectResult() {
   const { width, height } = useWindowSize()
@@ -22,13 +23,21 @@ function ProjectResult() {
     onCompleted: () => navigate(PATHS.PROJECT + newProjectId)
   })
 
+  useQuery({
+    queryFn: () => getProjectService(newProjectId!),
+    queryKey: ['project', newProjectId],
+    enabled: !!newProjectId
+  })
+
   const queryClient = useQueryClient()
 
   const handleGetData = async () => {
-    
+    queryClient.invalidateQueries({ queryKey: ['project', newProjectId] })
   }
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    handleGetData()
+  }, [])
 
   return (
     <>
@@ -60,7 +69,7 @@ function ProjectResult() {
               className="bg-primary/5 aspect-square h-44 rounded-2xl border pt-4 drop-shadow-xl"
             />
           </div>
-          <span className="text-slate-text mt-2">
+          <span className="text-slate-text mt-2 italic">
             Redirecting in {countdown.seconds}...
           </span>
         </div>

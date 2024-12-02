@@ -18,7 +18,8 @@ export const createProjectService = async (payload: any) => {
       })
       const dataToSave = {
         id: '18100',
-        ...payload.body,
+        ...payload,
+        createdAt: new Date().toISOString(),
         geodata: {
           type: 'Feature',
           geometry: {
@@ -139,11 +140,18 @@ export const failCreateProjectService = async (_: any) => {
 
 export const getProjectService = async (_: string) => {
   return new Promise((resolve) => {
+    const project = localStorage.getItem('project')
     setTimeout(() => {
-      resolve({
-        status: 200,
-        res: JSON.parse(localStorage.getItem('project') || '{}')
-      })
+      if (project) {
+        resolve({
+          status: 200,
+          res: JSON.parse(project)
+        })
+      } else
+        resolve({
+          status: 404,
+          res: { message: 'Project not found' }
+        })
     }, 1000)
   })
 }

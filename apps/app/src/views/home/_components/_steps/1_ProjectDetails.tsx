@@ -14,7 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { date, z } from 'zod'
 import StepDescription from '../StepDescription'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useWizardContext } from '../../_context/WizardContext'
 
 
@@ -45,7 +45,7 @@ function ProjectDetails() {
   })
 
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setFormDetails(data)
     setCurrentStep(1)
   }

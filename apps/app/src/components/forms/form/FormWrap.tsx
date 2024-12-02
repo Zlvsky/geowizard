@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/Button'
+import { cn } from '@/utils'
+import { useWizardContext } from '@/views/home/_context/WizardContext'
 
 interface FormInterface {
   id?: string
@@ -19,27 +21,48 @@ function FormWrap({
   onClick,
   children
 }: FormInterface): JSX.Element {
+  const { currentStep, setCurrentStep } = useWizardContext()
+
   return (
     <form
       id={id}
-      className='max-w-2xl mx-auto'
+      className="mx-auto max-w-2xl"
       onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         onSubmit && onSubmit(e)
-      }}
-    >
+      }}>
       <div className="mb-4">{children}</div>
       {submitText && (
         <div className="mt-6 flex justify-center py-1">
-          <Button
-            type="submit"
-            disabled={disabled}
-            size={'lg'}
-            className={buttonClassName}
-            onClick={onClick}
-          >
-            {submitText}
-          </Button>
+          {currentStep === 0 ? (
+            <Button
+              type="submit"
+              disabled={disabled}
+              size={'lg'}
+              className={buttonClassName}
+              onClick={onClick}>
+              {submitText}
+            </Button>
+          ) : (
+            <>
+              <Button
+                type="button"
+                size={'lg'}
+                variant={"outline"}
+                className={cn(buttonClassName, 'w-full rounded-r-none')}
+                onClick={() => setCurrentStep(currentStep - 1)}>
+                Back
+              </Button>
+              <Button
+                type="submit"
+                disabled={disabled}
+                size={'lg'}
+                className={cn(buttonClassName, 'w-full rounded-l-none')}
+                onClick={onClick}>
+                {submitText}
+              </Button>
+            </>
+          )}
         </div>
       )}
     </form>

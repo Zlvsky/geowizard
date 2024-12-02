@@ -11,12 +11,9 @@ function StepDescription({ title, description }: IProps) {
       <motion.div
         initial="hidden"
         key="step-description"
-        // whileInView="visible"
-        // viewport={{ once: true }}
         animate="visible"
         transition={{
           duration: 0.1,
-          // delay: 0.3,
           type: 'spring',
           damping: 10,
           stiffness: 100
@@ -32,8 +29,6 @@ function StepDescription({ title, description }: IProps) {
       <motion.div
         initial="hidden"
         key="step-description2"
-        // whileInView="visible"
-        // viewport={{ once: true }}
         animate="visible"
         transition={{
           duration: 0.1,
@@ -50,8 +45,6 @@ function StepDescription({ title, description }: IProps) {
           {description}
         </p>
       </motion.div>
-      {/* <h1 className="text-3xl text-black dark:text-white"></h1> */}
-      {/* <p className="text-slate-text text-xl"></p> */}
     </div>
   )
 }

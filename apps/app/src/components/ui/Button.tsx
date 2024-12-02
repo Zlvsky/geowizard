@@ -1,15 +1,3 @@
-// export interface ButtonInterface {
-//   size?: 'sm' | 'md' | 'lg' | 'full'
-//   style?: 'filled' | 'transparent'
-//   className?: string
-//   children: React.ReactNode
-//   disabled?: boolean
-//   type: 'button' | 'submit' | 'reset' | undefined
-//   onSubmit?: (event: React.FormEvent<HTMLButtonElement>) => void
-//   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-//   fullHeight?: boolean
-// }
-
 import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 

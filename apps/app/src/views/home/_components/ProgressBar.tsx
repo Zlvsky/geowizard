@@ -15,7 +15,6 @@ function ProgressBar() {
         animate={{ width: `${currentStep * (100 / (steps.length - 1))}%` }}
         transition={{
           duration: 0.5,
-          // ease: cubicBezier(0.32, 0.81, 0.91, 0.88)
           ease: easeIn
         }}
       />

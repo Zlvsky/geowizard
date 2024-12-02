@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 
 export function RichText({ value, onChange, placeholder }: any) {
   const [mounted, setMounted] = useState(false)
-  const ref = useRef<any>(null)
 
   useEffect(() => {
     setMounted(true)
@@ -19,7 +18,6 @@ export function RichText({ value, onChange, placeholder }: any) {
       <ReactQuill
         theme="snow"
         value={value}
-        ref={ref}
         onChange={onChange}
         placeholder={placeholder}
         modules={{

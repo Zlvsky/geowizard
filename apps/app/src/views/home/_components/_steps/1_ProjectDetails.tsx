@@ -57,7 +57,6 @@ function ProjectDetails() {
       exit="hidden"
       animate="visible"
       key="project-details"
-      // viewport={{ once: true }}
       transition={{
         duration: 0.1,
         type: 'spring',
@@ -107,7 +106,6 @@ function ProjectDetails() {
                     <RichText
                       placeholder="Name of your project"
                       {...field}
-                      // error={errors?.email}
                     />
                   </FormControl>
                   <FormMessage />

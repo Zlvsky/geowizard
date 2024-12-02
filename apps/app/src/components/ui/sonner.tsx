@@ -1,5 +1,3 @@
-'use client'
-
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { Toaster as Sonner } from 'sonner'
 

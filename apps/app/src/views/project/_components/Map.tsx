@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/Button'
 import Map from 'ol/Map'
 import View from 'ol/View'
 import GeoJSON from 'ol/format/GeoJSON'
@@ -15,6 +16,7 @@ interface MapProps {
 
 export default function MapComponent({ geojson }: MapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (!mapRef.current) return
@@ -43,12 +45,30 @@ export default function MapComponent({ geojson }: MapProps) {
       })
     })
 
-    map.getView().fit(vectorSource.getExtent(), { padding: [50, 50, 50, 50] })
+    const centerView = () => {
+      map.getView().fit(vectorSource.getExtent(), { padding: [50, 50, 50, 50] })
+    }
+
+    buttonRef.current?.addEventListener('click', centerView)
+
+    centerView()
 
     return () => {
       map.setTarget(undefined)
+      buttonRef.current?.removeEventListener('click', centerView)
     }
   }, [geojson])
 
-  return <div ref={mapRef} className="h-full w-full min-h-96" />
+  return (
+    <div
+      ref={mapRef}
+      className="relative h-[calc(100%-5rem)] min-h-96 w-full overflow-hidden rounded-2xl md:h-[calc(100%-3rem)]">
+      <Button
+        ref={buttonRef}
+        className="absolute left-10 top-1.5 z-10 m-[1px] h-[47px] rounded-[4px] border-0 bg-white py-0 font-semibold text-[#666] outline outline-1 outline-[#808080]/25 hover:outline-[#808080]"
+        variant={'outline'}>
+        Center
+      </Button>
+    </div>
+  )
 }

@@ -7,7 +7,7 @@ function ProgressBar() {
   const { currentStep } = useWizardContext()
 
   return (
-    <div className="relative mx-auto mt-8 mb-4 max-w-6xl">
+    <div className="relative mx-auto mt-8 mb-4 max-w-6xl w-full">
       <div className="bg-muted dark:bg-muted-foreground absolute bottom-2.5 left-0 h-1 w-full translate-y-1/2" />
       <motion.div
         className="absolute bottom-2.5 left-0 h-1  translate-y-1/2 bg-blue-500"

@@ -355,45 +355,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
           <div className="flex">
             <div className="flex flex-col">
               <div className="flex flex-col items-center justify-end gap-2 px-3 pb-4 lg:flex-row lg:items-start lg:pb-0">
-                {showCompare && (
-                  <div className="flex items-center space-x-2 py-1 pr-4">
-                    <Switch
-                      defaultChecked={Boolean(rangeCompare)}
-                      onCheckedChange={(checked: boolean) => {
-                        if (checked) {
-                          if (!range.to) {
-                            setRange({
-                              from: range.from,
-                              to: range.from
-                            })
-                          }
-                          setRangeCompare({
-                            from: new Date(
-                              range.from.getFullYear(),
-                              range.from.getMonth(),
-                              range.from.getDate() - 365
-                            ),
-                            to: range.to
-                              ? new Date(
-                                  range.to.getFullYear() - 1,
-                                  range.to.getMonth(),
-                                  range.to.getDate()
-                                )
-                              : new Date(
-                                  range.from.getFullYear() - 1,
-                                  range.from.getMonth(),
-                                  range.from.getDate()
-                                )
-                          })
-                        } else {
-                          setRangeCompare(undefined)
-                        }
-                      }}
-                      id="compare-mode"
-                    />
-                    <Label htmlFor="compare-mode">Compare</Label>
-                  </div>
-                )}
                 <div className="flex flex-col gap-2">
                   <div className="flex gap-2">
                     <DateInput
@@ -463,25 +424,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                   )}
                 </div>
               </div>
-              {isSmallScreen && (
-                <Select
-                  defaultValue={selectedPreset}
-                  onValueChange={(value) => {
-                    setPreset(value)
-                  }}
-                >
-                  <SelectTrigger className="mx-auto mb-2 w-[180px]">
-                    <SelectValue placeholder="Select..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {PRESETS.map((preset) => (
-                      <SelectItem key={preset.name} value={preset.name}>
-                        {preset.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              )}
               <div>
                 <Calendar
                   mode="range"
@@ -501,20 +443,6 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               </div>
             </div>
           </div>
-          {/* {!isSmallScreen && (
-            <div className="flex flex-col items-end gap-1 pb-6 pl-6 pr-2">
-              <div className="flex w-full flex-col items-end gap-1 pb-6 pl-6 pr-2">
-                {PRESETS.map((preset) => (
-                  <PresetButton
-                    key={preset.name}
-                    preset={preset.name}
-                    label={preset.label}
-                    isSelected={selectedPreset === preset.name}
-                  />
-                ))}
-              </div>
-            </div>
-          )} */}
         </div>
         <div className="flex justify-end gap-2 py-2 pr-4">
           <Button

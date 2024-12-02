@@ -70,7 +70,7 @@
 }
 
 @layer base {
-   @font-face {
+  @font-face {
     font-family: 'Inter';
     font-weight: 100 900;
     font-display: swap;
@@ -122,15 +122,15 @@ body {
 /* QUILL STYLES */
 
 .ql-toolbar.ql-snow {
-  @apply border-[1.5px] border-input rounded-t-2xl;
+  @apply border-gray dark:border-gray-foreground rounded-t-2xl border-[1.5px] transition-colors;
 }
 
 .ql-container.ql-snow {
-  @apply border-[1.5px] border-input rounded-b-2xl;
+  @apply border-gray dark:border-gray-foreground rounded-b-2xl border-[1.5px] transition-colors;
 }
 
 .ql-editor {
-  @apply prose w-full max-w-full;
+  @apply prose dark:prose-invert  w-full max-w-full;
 }
 
 .ql-editor.ql-blank::before {
@@ -145,10 +145,9 @@ body {
 }
 
 .ql-formats {
-  @apply border-r last:border-r-0 pr-4
+  @apply border-gray dark:border-gray-foreground border-r pr-4 transition-colors last:border-r-0;
 }
 
 .ql-formats button {
-  @apply rounded-md !size-7 !p-1 hover:bg-input transition-colors;
+  @apply hover:bg-gray hover:dark:bg-gray-foreground !size-7 rounded-md !p-1 transition-colors;
 }
-

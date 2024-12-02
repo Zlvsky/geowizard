@@ -15,7 +15,7 @@ function ProjectHeading({ data }: any) {
             <Skeleton className="h-6 w-24" />
           )}
         </div>
-        <p className="flex flex-row items-center gap-2">
+        <p className="text-text dark:text-text-foreground/60 transition-colors flex flex-row items-center gap-2">
           Created at:{' '}
           {data?.createdAt ? (
             new Date(data.createdAt).toDateString()

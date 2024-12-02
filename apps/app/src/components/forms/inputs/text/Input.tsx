@@ -16,14 +16,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             type={type}
             ref={ref}
             {...rest}
-            className="border-input w-full rounded-xl border-[1.5px] px-4 py-3 focus-visible:outline-none"
+            className="border-gray dark:border-gray-foreground bg-background dark:bg-foreground/20 w-full rounded-xl border-[1.5px] px-4 py-3 text-black transition-colors focus-visible:outline-none dark:text-white"
           />
           {/* 
             Show the rest of the characters that can be entered in the input field
           */}
           {!!rest.maxLength && (
             <div className="pointer-events-none select-none opacity-0 transition-opacity duration-200 group-focus-within:opacity-100">
-              <span className="text-muted-foreground absolute right-3 top-1/2 -translate-y-1/2 text-right text-[0.8rem]">
+              <span className="text-text dark:text-text-foreground absolute right-3 top-1/2 -translate-y-1/2 text-right text-[0.8rem]">
                 {rest.maxLength -
                   (typeof rest.value === 'string' ? rest.value.length : 0)}{' '}
                 / {rest.maxLength}

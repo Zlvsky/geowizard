@@ -63,13 +63,13 @@ function ProjectResult() {
           description="Your project has been submitted successfully."
         />
         <div className="mt-10 flex flex-col items-center justify-center">
-          <div className="rounded-3xl border bg-white p-2 shadow-lg">
+          <div className="dark:bg-foreground/10 border-gray dark:border-gray-foreground rounded-3xl border bg-white p-2 shadow-lg transition-colors">
             <img
               src={handsImage}
-              className="bg-primary/5 aspect-square h-44 rounded-2xl border pt-4 drop-shadow-xl"
+              className="bg-primary/5 border-gray dark:border-gray-foreground aspect-square h-44 rounded-2xl border pt-4 drop-shadow-xl transition-colors"
             />
           </div>
-          <span className="text-slate-text mt-2 italic">
+          <span className="text-text dark:text-text-foreground mt-2 italic transition-colors">
             Redirecting in {countdown.seconds}...
           </span>
         </div>

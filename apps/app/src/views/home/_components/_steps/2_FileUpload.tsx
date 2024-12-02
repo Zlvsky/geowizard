@@ -16,18 +16,20 @@ const UploadArea = () => {
         {...getRootProps()}
         className={cn(
           'flex  flex-col items-center justify-center rounded-2xl border border-dashed p-8 transition-colors',
-          isDragActive ? 'border-primary' : 'border-gray-300'
+          isDragActive
+            ? 'border-primary'
+            : 'border-gray dark:border-gray-foreground transition-colors'
         )}>
         <IconComponent isDragActive={isDragActive} />
-        <h3 className="mt-8 text-center text-xl font-medium tracking-tighter text-black dark:text-white">
+        <h3 className="mt-8 text-center text-xl font-medium tracking-tighter text-black transition-colors dark:text-white">
           Upload your file
         </h3>
-        <p className="text-slate text-center">
+        <p className="text-text dark:text-text-foreground text-center transition-colors">
           Supported format: <span className="text-primary">.geojson</span>
         </p>
         <Button
           variant="outline"
-          className="mt-6 w-64 rounded-lg border-gray-300 transition-all hover:bg-[#EDF2F5] active:scale-95"
+          className="mt-6 w-64 rounded-lg border-gray dark:border-gray-foreground transition-all hover:bg-[#EDF2F5] hover:dark:bg-foreground active:scale-95"
           onClick={open}>
           Select file
         </Button>
@@ -71,9 +73,9 @@ export const ListedFile = () => {
   const { uploadedFile } = useWizardContext()
 
   return (
-    <div className="mt-10 w-full rounded-2xl border border-gray-300 px-2 py-3">
+    <div className="border-gray dark:border-gray-foreground mt-10 w-full rounded-2xl border px-2 py-3">
       <div className="flex flex-row items-center gap-2">
-        <div className="flex size-12 items-center justify-center rounded-xl border p-1 shadow-md">
+        <div className="border-gray dark:border-gray-foreground flex size-12 items-center justify-center rounded-xl border p-1 shadow-md transition-colors">
           <div className="bg-primary/70 relative flex h-full w-full items-center justify-center rounded-lg ">
             <FileXIcon
               className={cn(
@@ -90,13 +92,13 @@ export const ListedFile = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <p className="truncate text-base font-medium text-black">
+          <p className="truncate text-base font-medium text-black transition-colors dark:text-white">
             {uploadedFile?.name
               ? uploadedFile?.name?.split('.geojson')
               : 'File not uploaded'}
           </p>
           {uploadedFile ? (
-            <p className="text-slate-text text-sm">
+            <p className="text-text dark:text-text-foreground text-sm transition-colors">
               {'GEOJSON'} • {Math.round(uploadedFile?.size / 1024)} KB
             </p>
           ) : null}

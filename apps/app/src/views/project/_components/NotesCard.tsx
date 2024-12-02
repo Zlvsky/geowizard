@@ -13,14 +13,14 @@ function NotesCard({
   return (
     <Card className="flex-1">
       <CardHeader>
-        <CardTitle className="flex flex-row items-center justify-center md:justify-normal gap-2">
-          <NotebookTextIcon  /> Project notes
+        <CardTitle className="flex flex-row items-center justify-center gap-2 md:justify-normal">
+          <NotebookTextIcon /> Project notes
         </CardTitle>
       </CardHeader>
-      <CardContent className="md:pr-0 w-full flex-1">
+      <CardContent className="w-full flex-1 md:pr-0">
         {!isLoading ? (
           description ? (
-            <div className="prose max-h-96 lg:max-h-[calc(50vh-100px)] w-full overflow-auto flex-1">
+            <div className="prose dark:prose-invert max-h-96 w-full flex-1 overflow-auto lg:max-h-[calc(50vh-100px)]">
               {' '}
               {parse(description)}
             </div>

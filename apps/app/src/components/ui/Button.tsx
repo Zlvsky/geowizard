@@ -21,11 +21,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 'bg-primary text-white hover:bg-primary/90',
-        outline: 'border border-black bg-transparent text-black',
+        outline:
+          'border border-black dark:border-foreground bg-background dark:bg-foreground/20 text-black dark:text-background',
         link: 'underline-offset-4 hover:underline',
         icon: 'ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
-        input: 'w-full border-[1.5px] border-input rounded-xl text-base justify-between'
+        input:
+          'w-full border-[1.5px] border-gray dark:border-gray-foreground bg-background dark:bg-foreground/20 rounded-xl text-base justify-between dark:text-background'
       },
       size: {
         default: 'h-10 px-4 py-2',

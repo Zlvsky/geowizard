@@ -9,23 +9,33 @@ export default {
       },
       colors: {
         primary: '#226BFE',
-        'dark-background': '#212121',
+        background: '#ffffff',
+        foreground: '#2A2A2A',
+        text: {
+          DEFAULT: '#9999A3',
+          foreground: '#BEBEBE'
+        },
+        gray: {
+          DEFAULT: '#ECEDF0',
+          foreground: '#303239'
+        },
+
+        'dark-background': '#1B1B1C',
         light: '#F6F6F6',
         slate: '#848FA1',
         placeholder: '#9BA3AF',
         'slate-text': '#6E7B92',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+
         input: '#ECEDF0',
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))'
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
-        },
+        // muted: {
+        //   DEFAULT: 'hsl(var(--muted))',
+        //   foreground: 'hsl(var(--muted-foreground))'
+        // },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))'

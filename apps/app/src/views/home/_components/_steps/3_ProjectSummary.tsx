@@ -17,7 +17,7 @@ const SummaryText = ({ title, value }: { title: string; value: string }) => {
   return (
     <div className="flex flex-col">
       <h3 className="text-lg font-medium text-black dark:text-white">{title}</h3>
-      <p className="text-slate-text dark:text-white">{value}</p>
+      <p className="text-text dark:text-text-foreground">{value}</p>
     </div>
   )
 }
@@ -26,7 +26,7 @@ const DescriptionText = ({ title, value }: { title: string; value: string }) => 
   return (
     <div className="flex flex-col">
       <h3 className="text-lg font-medium text-black dark:text-white">{title}</h3>
-      <div className="text-slate-text prose max-h-80 overflow-auto dark:text-white">
+      <div className="text-text dark:text-text-foreground prose dark:prose-invert max-h-80 overflow-auto">
         {value ? parse(value) : 'No description provided'}
       </div>
     </div>

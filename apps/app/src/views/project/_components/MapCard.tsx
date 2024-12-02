@@ -12,7 +12,7 @@ function MapCard({ geodata }: { geodata: any }) {
           <MapPinnedIcon /> Area of interest
         </div>
         {geodata && (
-          <span className="bg-primary/10 rounded-xl p-2 text-sm text-gray-500">
+          <span className="bg-primary/10 dark:bg-blue-50/80 rounded-xl p-2 text-sm text-gray-500 dark:text-gray-foreground">
             {calculateHectares(geodata?.geometry?.coordinates || [])} hectares
           </span>
         )}

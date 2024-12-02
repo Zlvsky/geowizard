@@ -20,7 +20,7 @@ const GlobalBottomComponents = () => {
   return (
     <>
       {/* <Toaster position="top-right" reverseOrder={false} /> */}
-      <Toaster richColors position="bottom-center" />
+      <Toaster theme={"light"} richColors position="bottom-center" />
       <CustomToster />
     </>
   )

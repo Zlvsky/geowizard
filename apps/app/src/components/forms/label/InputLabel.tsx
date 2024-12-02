@@ -9,14 +9,16 @@ const InputLabel = ({ name, label, error }: IInputLabel): JSX.Element | null => 
 
   if (error) {
     return (
-      <label htmlFor={name} className="mt-2 text-sm text-red-500">
+      <label htmlFor={name} className="dark:text-red- mt-2 text-sm text-red-500">
         {error}
       </label>
     )
   }
 
   return (
-    <label htmlFor={name} className="mt-2 text-sm">
+    <label
+      htmlFor={name}
+      className="mt-2 text-sm text-black transition-colors dark:text-white">
       {label}
     </label>
   )

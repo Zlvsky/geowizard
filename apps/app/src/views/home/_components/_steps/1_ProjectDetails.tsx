@@ -11,12 +11,11 @@ import Input from '@/components/forms/inputs/text/Input'
 import { RichText } from '@/components/forms/inputs/text/RichText'
 import { DateRangePicker } from '@/components/ui/calendar/DateRangePicker'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { date, z } from 'zod'
-import StepDescription from '../StepDescription'
-import { motion } from 'framer-motion'
 import { useWizardContext } from '../../_context/WizardContext'
-
+import StepDescription from '../StepDescription'
 
 const formSchema = z.object({
   name: z
@@ -44,7 +43,6 @@ function ProjectDetails() {
     }
   })
 
-
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setFormDetails(data)
     setCurrentStep(1)
@@ -66,7 +64,8 @@ function ProjectDetails() {
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 30 }
-      }}>
+      }}
+    >
       <StepDescription
         title="New Project"
         description="Please start by providing details of your project."
@@ -75,7 +74,8 @@ function ProjectDetails() {
         <FormWrap
           submitText="Next"
           buttonClassName="w-full text-base"
-          onSubmit={form.handleSubmit(onSubmit)}>
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
           <div className="flex w-full flex-col gap-8">
             <FormField
               control={form.control}
@@ -103,10 +103,7 @@ function ProjectDetails() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <RichText
-                      placeholder="Name of your project"
-                      {...field}
-                    />
+                    <RichText placeholder="Name of your project" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

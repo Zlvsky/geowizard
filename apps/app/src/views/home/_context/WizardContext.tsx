@@ -48,7 +48,8 @@ export function WizardContextProvider({ children }: ContextProps) {
         uploadedFile,
         newProjectId,
         setNewProjectId
-      }}>
+      }}
+    >
       {children}
     </CustomContext.Provider>
   )

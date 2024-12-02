@@ -161,7 +161,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
           resetValues()
         }
         setIsOpen(open)
-      }}>
+      }}
+    >
       <PopoverTrigger asChild>
         <Button size={'input'} variant="input">
           <div className="text-right">
@@ -286,7 +287,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               setIsOpen(false)
               resetValues()
             }}
-            variant="ghost">
+            variant="ghost"
+          >
             Cancel
           </Button>
           <Button
@@ -298,7 +300,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               ) {
                 onUpdate?.({ range, rangeCompare })
               }
-            }}>
+            }}
+          >
             Update
           </Button>
         </div>

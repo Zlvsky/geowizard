@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Logo: React.FC = () => {
   return (
-    <Link to="/" className='dark:text-white text-black text-2xl tracking-tight'>
+    <Link to="/" className="text-2xl tracking-tight text-black dark:text-white">
       geowizard.
     </Link>
   )

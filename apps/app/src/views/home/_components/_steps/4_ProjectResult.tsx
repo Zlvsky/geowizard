@@ -57,7 +57,8 @@ function ProjectResult() {
         variants={{
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: 30 }
-        }}>
+        }}
+      >
         <StepDescription
           title="Success!"
           description="Your project has been submitted successfully."

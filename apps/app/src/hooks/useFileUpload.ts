@@ -4,7 +4,7 @@ import { useDropzone } from 'react-dropzone'
 
 export const useFilesHandler = () => {
   // CUSTOM ONDROP CALLBACK TO PREVENT CLEARING FILES WHEN FILE DIALOG POPS UP AND CHANGING WHITESPACES TO "_" TO PREVENT API BUGS
-    const { setUploadedFile } = useWizardContext()
+  const { setUploadedFile } = useWizardContext()
 
   const onDrop = useCallback((files: any) => {
     const renamedAcceptedFiles = files.map(

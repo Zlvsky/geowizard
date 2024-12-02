@@ -23,9 +23,5 @@ export default function ProjectWizard() {
     }
   }, [currentStep])
 
-  return (
-    <div className="mx-auto mt-2 max-w-6xl px-4 py-6 w-full">
-      {renderStep()}
-    </div>
-  )
+  return <div className="mx-auto mt-2 w-full max-w-6xl px-4 py-6">{renderStep()}</div>
 }

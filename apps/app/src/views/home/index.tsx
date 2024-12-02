@@ -1,7 +1,7 @@
-import Container from "@/components/layout/containers/Container";
-import { WizardContextProvider } from "./_context/WizardContext";
-import ProgressBar from "./_components/ProgressBar";
-import ProjectWizard from "./_components/ProjectWizard";
+import Container from '@/components/layout/containers/Container'
+import ProgressBar from './_components/ProgressBar'
+import ProjectWizard from './_components/ProjectWizard'
+import { WizardContextProvider } from './_context/WizardContext'
 
 function Home() {
   return (
@@ -14,4 +14,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default Home

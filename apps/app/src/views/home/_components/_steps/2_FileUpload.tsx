@@ -19,7 +19,8 @@ const UploadArea = () => {
           isDragActive
             ? 'border-primary'
             : 'border-gray dark:border-gray-foreground transition-colors'
-        )}>
+        )}
+      >
         <IconComponent isDragActive={isDragActive} />
         <h3 className="mt-8 text-center text-xl font-medium tracking-tighter text-black transition-colors dark:text-white">
           Upload your file
@@ -29,8 +30,9 @@ const UploadArea = () => {
         </p>
         <Button
           variant="outline"
-          className="mt-6 w-64 rounded-lg border-gray dark:border-gray-foreground transition-all hover:bg-[#EDF2F5] hover:dark:bg-foreground active:scale-95"
-          onClick={open}>
+          className="border-gray dark:border-gray-foreground hover:dark:bg-foreground mt-6 w-64 rounded-lg transition-all hover:bg-[#EDF2F5] active:scale-95"
+          onClick={open}
+        >
           Select file
         </Button>
       </div>
@@ -124,7 +126,7 @@ function FileUpload() {
       key="file-upload"
       transition={{
         duration: 0.1,
-        delay: 0.150,
+        delay: 0.15,
         type: 'spring',
         damping: 10,
         stiffness: 100
@@ -132,7 +134,8 @@ function FileUpload() {
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 30 }
-      }}>
+      }}
+    >
       <StepDescription
         title="Import area of interest"
         description="Drag and drop or select the geojson file of your area of interest."
@@ -141,7 +144,8 @@ function FileUpload() {
         submitText="Next"
         buttonClassName="w-full text-base"
         onSubmit={onSubmit}
-        disabled={!uploadedFile}>
+        disabled={!uploadedFile}
+      >
         <UploadArea />
         <ListedFile />
       </FormWrap>

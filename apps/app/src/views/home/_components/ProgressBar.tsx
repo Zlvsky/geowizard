@@ -28,7 +28,8 @@ function ProgressBar() {
                   ? 'border-blue-500'
                   : 'border-gray dark:border-gray-foreground',
                 index < currentStep ? 'bg-blue-500' : 'dark:bg-dark-background bg-white'
-              )}>
+              )}
+            >
               <span
                 className={cn(
                   'text-text  dark:text-text-foreground absolute left-1/2 mb-3 w-max text-sm transition-colors duration-700',
@@ -37,7 +38,8 @@ function ProgressBar() {
                   index === 0 && '-top-8 lg:-translate-x-1/2 ',
                   index === steps.length - 1 && '-translate-x-full lg:-translate-x-1/2',
                   index > 0 && index < steps.length - 1 && '-translate-x-1/2'
-                )}>
+                )}
+              >
                 {step}
               </span>
             </div>

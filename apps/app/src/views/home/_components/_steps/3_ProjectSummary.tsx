@@ -124,7 +124,8 @@ function ProjectSummary() {
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 30 }
-      }}>
+      }}
+    >
       <StepDescription
         title="Check if everything is correct"
         description="Please check if everything is correct before submitting your project."
@@ -133,7 +134,8 @@ function ProjectSummary() {
         submitText="Create new project"
         buttonClassName="w-full text-base"
         onSubmit={onSubmit}
-        disabled={loading}>
+        disabled={loading}
+      >
         <div className="flex flex-col gap-6">
           <SummaryText title="Project name" value={formDetails.name} />
           <SummaryText

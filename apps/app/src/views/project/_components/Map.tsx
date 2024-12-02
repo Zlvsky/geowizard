@@ -62,11 +62,13 @@ export default function MapComponent({ geojson }: MapProps) {
   return (
     <div
       ref={mapRef}
-      className="relative h-[calc(100%-5rem)] min-h-96 w-full overflow-hidden rounded-2xl md:h-[calc(100%-3rem)]">
+      className="relative h-[calc(100%-5rem)] min-h-96 w-full overflow-hidden rounded-2xl md:h-[calc(100%-3rem)]"
+    >
       <Button
         ref={buttonRef}
         className="absolute left-10 top-1.5 z-10 m-[1px] h-[47px] rounded-[4px] border-0 bg-white py-0 font-semibold text-[#666] outline outline-1 outline-[#808080]/25 hover:outline-[#808080] dark:bg-white dark:text-[#666]"
-        variant={'outline'}>
+        variant={'outline'}
+      >
         Center
       </Button>
     </div>

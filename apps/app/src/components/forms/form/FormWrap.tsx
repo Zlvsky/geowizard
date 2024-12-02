@@ -30,7 +30,8 @@ function FormWrap({
       onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         onSubmit && onSubmit(e)
-      }}>
+      }}
+    >
       <div className="mb-4">{children}</div>
       {submitText && (
         <div className="mt-6 flex justify-center py-1">
@@ -40,7 +41,8 @@ function FormWrap({
               disabled={disabled}
               size={'lg'}
               className={buttonClassName}
-              onClick={onClick}>
+              onClick={onClick}
+            >
               {submitText}
             </Button>
           ) : (
@@ -48,9 +50,10 @@ function FormWrap({
               <Button
                 type="button"
                 size={'lg'}
-                variant={"outline"}
+                variant={'outline'}
                 className={cn(buttonClassName, 'w-full rounded-r-none')}
-                onClick={() => setCurrentStep(currentStep - 1)}>
+                onClick={() => setCurrentStep(currentStep - 1)}
+              >
                 Back
               </Button>
               <Button
@@ -58,7 +61,8 @@ function FormWrap({
                 disabled={disabled}
                 size={'lg'}
                 className={cn(buttonClassName, 'w-full rounded-l-none')}
-                onClick={onClick}>
+                onClick={onClick}
+              >
                 {submitText}
               </Button>
             </>

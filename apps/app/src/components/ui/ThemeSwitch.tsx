@@ -14,7 +14,8 @@ const ThemeSwitch = React.forwardRef<
       className
     )}
     {...props}
-    ref={ref}>
+    ref={ref}
+  >
     <div className="absolute flex w-full justify-between rounded-full">
       <div className="flex h-7 w-7 items-center justify-center">
         <Moon size={18} color="#8D98A8" />
@@ -28,7 +29,8 @@ const ThemeSwitch = React.forwardRef<
     <SwitchPrimitives.Thumb
       className={cn(
         'bg-primary pointer-events-none relative flex h-7 w-7 items-center justify-center rounded-full shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-8 data-[state=unchecked]:translate-x-0'
-      )}>
+      )}
+    >
       <div className="">{props.children}</div>
     </SwitchPrimitives.Thumb>
   </SwitchPrimitives.Root>

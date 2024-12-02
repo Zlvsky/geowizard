@@ -27,7 +27,7 @@ export function RichText({ value, onChange, placeholder }: any) {
             ['clean']
           ]
         }}
-        className="bg-background dark:bg-foreground/20 transition-colors group h-64 pb-11 rounded-2xl"
+        className="bg-background dark:bg-foreground/20 group h-64 rounded-2xl pb-11 transition-colors"
       />
     </div>
   )

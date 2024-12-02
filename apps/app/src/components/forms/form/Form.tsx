@@ -98,7 +98,8 @@ const FormLabel = React.forwardRef<
         className
       )}
       htmlFor={formItemId}
-      {...props}>
+      {...props}
+    >
       {props.children}
       {required && <span className="text-red-500 dark:text-red-700">*</span>}
     </Label>
@@ -157,7 +158,8 @@ const FormMessage = React.forwardRef<
         'dark:text-red- absolute text-sm font-medium text-red-500',
         className
       )}
-      {...props}>
+      {...props}
+    >
       {body}
     </p>
   )

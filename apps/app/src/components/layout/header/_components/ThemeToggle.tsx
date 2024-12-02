@@ -23,7 +23,8 @@ export default function ThemeToggle() {
     <ThemeSwitch
       id="theme-switch"
       checked={theme === 'light'}
-      onCheckedChange={handleThemeChange}>
+      onCheckedChange={handleThemeChange}
+    >
       <div className="">
         <Sun
           size={18}

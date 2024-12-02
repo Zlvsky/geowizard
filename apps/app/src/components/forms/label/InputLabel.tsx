@@ -18,7 +18,8 @@ const InputLabel = ({ name, label, error }: IInputLabel): JSX.Element | null => 
   return (
     <label
       htmlFor={name}
-      className="mt-2 text-sm text-black transition-colors dark:text-white">
+      className="mt-2 text-sm text-black transition-colors dark:text-white"
+    >
       {label}
     </label>
   )

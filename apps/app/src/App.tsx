@@ -1,10 +1,9 @@
 import Header from '@/components/layout/header/Header'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter } from 'react-router-dom'
-import { Router } from './router/Router'
 import PageWrap from './components/layout/containers/PageWrap'
 import { Toaster } from './components/ui/sonner'
-import { QueryClient, QueryClientProvider } from 'react-query'
-
+import { Router } from './router/Router'
 
 const GlobalTopComponents = () => {
   return (
@@ -17,7 +16,7 @@ const GlobalTopComponents = () => {
 const GlobalBottomComponents = () => {
   return (
     <>
-      <Toaster theme={"light"} richColors position="bottom-center" />
+      <Toaster theme={'light'} richColors position="bottom-center" />
     </>
   )
 }

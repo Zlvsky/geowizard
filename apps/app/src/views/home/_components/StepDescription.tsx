@@ -21,7 +21,8 @@ function StepDescription({ title, description }: IProps) {
         variants={{
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: 30 }
-        }}>
+        }}
+      >
         <h1 className="text-center text-3xl font-medium tracking-tighter text-black transition-colors dark:text-white">
           {title}
         </h1>
@@ -40,7 +41,8 @@ function StepDescription({ title, description }: IProps) {
         variants={{
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: 30 }
-        }}>
+        }}
+      >
         <p className="text-text dark:text-text-foreground/60 max-w-xl text-center text-xl tracking-tight">
           {description}
         </p>

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
-import { Skeleton } from '@/components/ui/Skeleton';
+import { Skeleton } from '@/components/ui/Skeleton'
 import { format } from 'date-fns'
 import { LucideCalendarRange } from 'lucide-react'
 
@@ -7,7 +7,7 @@ function PeriodCard({ date }: { date?: { from: Date; to: Date } }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex flex-row items-center justify-center md:justify-normal gap-2">
+        <CardTitle className="flex flex-row items-center justify-center gap-2 md:justify-normal">
           <LucideCalendarRange /> Period of interest
         </CardTitle>
       </CardHeader>

@@ -1,27 +1,23 @@
-import BigContainer from '@/components/layout/containers/Container'
-import PageWrap from '@/components/layout/containers/PageWrap'
-import { Button } from '@/components/ui/Button'
-import { PATHS } from '@/router/data'
-import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 
-function PageNotFound() {
+export default function PageNotFound() {
   return (
-    <PageWrap>
-      <Helmet>
-        <title>404 Not found - GeoWizard</title>
-      </Helmet>
-      <BigContainer>
-        <div className="-mb-10 mt-20 flex flex-col items-center justify-center">
-          <h1 className="text-8xl font-black ">404</h1>
-          <h2 className="mb-3 text-2xl font-bold">{'Page Not Found :('}</h2>
-          <Link to={PATHS.HOME}>
-            <Button>Go back to home</Button>
-          </Link>
+    <main className="container mx-auto flex w-full flex-1 flex-col p-4 justify-center">
+      <div className="w-full space-y-6 text-center">
+        <div className="space-y-3">
+          <h1 className="animate-bounce text-4xl font-bold tracking-tighter sm:text-5xl dark:text-background">
+            404
+          </h1>
+          <p className="text-gray-500">
+            I think you're lost. Let's get you back on track.
+          </p>
         </div>
-      </BigContainer>
-    </PageWrap>
+        <Link
+          to="/"
+          className="inline-flex h-10 items-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
+          Return to website
+        </Link>
+      </div>
+    </main>
   )
 }
-
-export default PageNotFound

@@ -16,7 +16,7 @@ const GlobalTopComponents = () => {
 const GlobalBottomComponents = () => {
   return (
     <>
-      <Toaster theme={'light'} richColors position="bottom-center" />
+      <Toaster richColors position="bottom-center" toastOptions={{}} />
     </>
   )
 }

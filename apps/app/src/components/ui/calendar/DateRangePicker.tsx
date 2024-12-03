@@ -164,7 +164,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       }}
     >
       <PopoverTrigger asChild>
-        <Button size={'input'} variant="input">
+        <Button size={'input'} variant="input" className='datepicker'>
           <div className="text-right">
             <div className="py-1 font-normal">
               <div>{`${formatDate(range.from, locale)}${

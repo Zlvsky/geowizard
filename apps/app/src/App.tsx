@@ -28,13 +28,13 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <HashRouter>
+      <BrowserRouter>
         <PageWrap>
           <GlobalTopComponents />
           <Router />
           <GlobalBottomComponents />
         </PageWrap>
-      </HashRouter>
+      </BrowserRouter>
     </QueryClientProvider>
   )
 }

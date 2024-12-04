@@ -5,25 +5,29 @@
 To run the project locally, follow these steps:
 
 1. Clone the repository:
-    ```sh
-    git clone git@github.com:Zlvsky/geowizard.git
-    cd geowizard-frontend
-    ```
+
+   ```sh
+   git clone git@github.com:Zlvsky/geowizard.git
+   cd geowizard-frontend
+   ```
 
 2. Install pnpm globally (if not already installed):
-    ```sh
-    npm install -g pnpm
-    ```
+
+   ```sh
+   npm install -g pnpm
+   ```
 
 3. Install dependencies:
-    ```sh
-    pnpm i
-    ```
+
+   ```sh
+   pnpm i
+   ```
 
 4. Start the development server:
-    ```sh
-    pnpm run dev
-    ```
+
+   ```sh
+   pnpm run dev
+   ```
 
 5. Open your browser and navigate to `http://localhost:5173`.
 
@@ -32,14 +36,16 @@ To run the project locally, follow these steps:
 To run the project using Docker, follow these steps:
 
 1. Build the Docker image:
-    ```sh
-    pnpm run docker:build
-    ```
+
+   ```sh
+   pnpm run docker:build
+   ```
 
 2. Run the Docker container:
-    ```sh
-    pnpm run docker:run
-    ```
+
+   ```sh
+   pnpm run docker:run
+   ```
 
 3. Open your browser and navigate to `http://localhost`.
 
@@ -48,16 +54,16 @@ To run the project using Docker, follow these steps:
 To run end-to-end tests using Cypress, follow these steps:
 
 1. Open Cypress test runner:
-    ```sh
-    pnpm run cypress:open
-    ```
+
+   ```sh
+   pnpm run cypress:open
+   ```
 
 2. Choose E2E Testing:
 
 3. Choose Chrome
 
 4. Enter wizard.cy.js e2e test
-    
 
 ## Technologies and Libraries Used
 

@@ -20,7 +20,8 @@ const UploadArea = () => {
           isDragActive
             ? 'border-primary'
             : 'border-gray dark:border-gray-foreground transition-colors'
-        )}>
+        )}
+      >
         <IconComponent isDragActive={isDragActive} />
         <h3 className="mt-8 text-center text-xl font-medium tracking-tighter text-black transition-colors dark:text-white">
           Upload your file
@@ -31,7 +32,8 @@ const UploadArea = () => {
         <Button
           variant="outline"
           className="border-gray dark:border-gray-foreground hover:dark:bg-foreground mt-6 w-64 rounded-lg transition-all hover:bg-[#EDF2F5] active:scale-95"
-          onClick={open}>
+          onClick={open}
+        >
           Select file
         </Button>
       </div>
@@ -95,7 +97,8 @@ export const ListedFile = () => {
         <div className="flex flex-col">
           <p
             data-cy="file-placeholder"
-            className="truncate text-base font-medium text-black transition-colors dark:text-white">
+            className="truncate text-base font-medium text-black transition-colors dark:text-white"
+          >
             {uploadedFile?.name
               ? uploadedFile?.name?.split('.geojson')
               : 'File not uploaded'}
@@ -103,7 +106,8 @@ export const ListedFile = () => {
           {uploadedFile ? (
             <p
               data-cy="file-placeholder"
-              className="text-text dark:text-text-foreground text-sm transition-colors">
+              className="text-text dark:text-text-foreground text-sm transition-colors"
+            >
               {'GEOJSON'} • {Math.round(uploadedFile?.size / 1024)} KB
             </p>
           ) : null}

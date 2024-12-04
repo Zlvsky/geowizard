@@ -8,8 +8,8 @@ const PageWrap = memo(({ children }: PropsWithChildren) => {
   return (
     <div
       className={cn(
-        `app dark:bg-dark-background flex min-h-screen  w-full scale-100 flex-col rounded-none bg-white transition-all duration-500`,
-        open && 'overflow-hidden rounded-lg'
+        `app dark:bg-dark-background flex min-h-screen w-full flex-col rounded-none bg-white transition-colors duration-500`,
+        open && 'overflow-hidden rounded-lg',
       )}
       style={
         open
@@ -26,7 +26,7 @@ const PageWrap = memo(({ children }: PropsWithChildren) => {
               transitionProperty: 'transform, border-radius',
               transitionDuration: '0.5s',
               transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)',
-              transform: 'scale(1) translate3d(0, 0, 0)'
+              // transform: 'scale(1) translate3d(0, 0, 0)'
             }
       }
     >

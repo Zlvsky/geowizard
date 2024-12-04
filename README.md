@@ -8,7 +8,7 @@ To run the project locally, follow these steps:
 
    ```sh
    git clone git@github.com:Zlvsky/geowizard.git
-   cd geowizard-frontend
+   cd geowizard
    ```
 
 2. Install pnpm globally (if not already installed):

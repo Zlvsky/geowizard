@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://zlvsky.github.io/geowizard",
   "workspaces": [
     "/apps/*"
   ],
   "scripts": {
     "dev": "pnpm --filter app dev",
     "build": "pnpm --filter app build",
+    "deploygh": "pnpm --filter app deploygh",
     "lint": "pnpm --filter app lint",
     "cypress:open": "pnpm --filter cypress open",
     "cypress:run": "pnpm --filter cypress run",
@@ -72,6 +74,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.16.0",
+    "gh-pages": "^6.2.0",
     "husky": "^9.1.7",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",

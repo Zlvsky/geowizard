@@ -1,6 +1,6 @@
 import Header from '@/components/layout/header/Header'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import PageWrap from './components/layout/containers/PageWrap'
 import { TutorialPopup } from './components/tutorial-popup/TutorialPopup'
 import { Toaster } from './components/ui/sonner'

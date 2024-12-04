@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "pnpm --filter app dev",
     "build": "pnpm --filter app build",
-    "deploygh": "pnpm --filter app deploygh",
+    "predeploy": "pnpm --filter app build",
+    "deploy": "pnpm --filter app deploygh",
     "lint": "pnpm --filter app lint",
     "cypress:open": "pnpm --filter cypress open",
     "cypress:run": "pnpm --filter cypress run",

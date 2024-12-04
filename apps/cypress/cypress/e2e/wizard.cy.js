@@ -6,6 +6,19 @@ describe('Wizard simulation', () => {
   })
 
   it('Creates project succesfully', () => {
+
+    // 0. Skip tutorial
+
+    cy.wait(1000)
+
+    cy.get('button').contains('Continue').click()
+    cy.wait(500)
+    cy.get('button').contains('Continue').click()
+    cy.wait(500)
+    cy.get('button').contains('Continue').click()
+    cy.wait(500)
+    cy.get('button').contains('Continue').click()
+
     // 1. Test that the ProjectDetails form is displayed
     cy.get('input[name="name"]').should('be.visible')
     cy.get('.ql-editor').should('be.visible')
